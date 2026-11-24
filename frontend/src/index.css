@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: 'inter_regular';
+    src: local('Inter Regular'), local('Inter-Regular');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'Inter', inter_regular, fallback-inter_regular, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.4;
+    background-color: #FAF9F6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: default;
+  }
+
+  /* Simple, standard OS hand pointer for all interactive items */
+  button,
+  a,
+  select,
+  summary,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="checkbox"],
+  input[type="radio"],
+  .cursor-pointer {
+    cursor: pointer !important;
+  }
+
+  button:disabled,
+  input:disabled,
+  [aria-disabled="true"],
+  .cursor-not-allowed {
+    cursor: not-allowed !important;
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    font-family: 'Inter', inter_regular, fallback-inter_regular, Arial, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Inter', inter_regular, fallback-inter_regular, Arial, sans-serif;
+    color: #000000;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
