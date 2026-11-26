@@ -24,3 +24,8 @@ Thumbs.db
 scratch/
 .system_generated/
 
+# Sensitive MCP & local agent configs
+.agents/
+*mcp_config.json
+.mcp.json
+

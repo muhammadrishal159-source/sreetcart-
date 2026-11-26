@@ -22,10 +22,10 @@ export const ShopPage = ({ shop, products, onBack }) => {
   if (!shop) {
     return (
       <div className="max-w-4xl mx-auto py-16 px-4 text-center">
-        <p className="text-slate-500 mb-4">Shop details not found.</p>
+        <p className="text-[#5C5647] mb-4">Shop details not found.</p>
         <button
           onClick={onBack}
-          className="px-4 py-2 bg-orange-600 text-white rounded-lg text-sm font-semibold"
+          className="px-4 py-2 bg-[#FACC15] text-[#1B1C19] rounded-lg text-sm font-semibold"
         >
           Return to Marketplace
         </button>
@@ -57,16 +57,16 @@ export const ShopPage = ({ shop, products, onBack }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <button
           onClick={onBack}
-          className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-2xs"
+          className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#1B1C19] transition-colors bg-white px-3 py-1.5 rounded-lg border border-[#EAE4D3] shadow-2xs"
         >
-          <ArrowLeft className="w-4 h-4 text-orange-600" />
+          <ArrowLeft className="w-4 h-4 text-[#CA8A04]" />
           <span>Back to Kozhikode Stores</span>
         </button>
       </div>
 
       {/* Shop Profile Banner & Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+        <div className="bg-white rounded-3xl border border-[#EAE4D3] overflow-hidden shadow-sm">
           {/* Cover Banner */}
           <div className="h-48 sm:h-64 lg:h-72 w-full relative overflow-hidden bg-slate-800">
             <img
@@ -117,7 +117,7 @@ export const ShopPage = ({ shop, products, onBack }) => {
                     </span>
                   </div>
 
-                  <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-1">
+                  <h1 className="text-2xl sm:text-3xl font-black text-[#1B1C19] tracking-tight mt-1">
                     {shop.name}
                   </h1>
                 </div>
@@ -139,7 +139,7 @@ export const ShopPage = ({ shop, products, onBack }) => {
                 {shop.phone && (
                   <a
                     href={`tel:${shop.phone}`}
-                    className="bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs sm:text-sm px-3.5 py-2.5 rounded-xl flex items-center space-x-1.5 transition-colors border border-slate-200"
+                    className="bg-slate-100 hover:bg-slate-200 text-[#1B1C19] font-semibold text-xs sm:text-sm px-3.5 py-2.5 rounded-xl flex items-center space-x-1.5 transition-colors border border-[#EAE4D3]"
                   >
                     <Phone className="w-4 h-4 text-slate-600" />
                     <span>Call</span>
@@ -159,18 +159,18 @@ export const ShopPage = ({ shop, products, onBack }) => {
                 </p>
               </div>
 
-              <div className="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100 text-xs">
+              <div className="space-y-2 bg-[#FFFDF7] p-4 rounded-xl border border-slate-100 text-xs">
                 <div className="flex items-start space-x-2 text-slate-700">
-                  <MapPin className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#CA8A04] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold block">Store Address:</span>
-                    <span className="text-slate-500">{shop.address}</span>
+                    <span className="text-[#5C5647]">{shop.address}</span>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2 text-slate-600 pt-1">
                   <Star className="w-4 h-4 fill-amber-400 text-amber-400 shrink-0" />
                   <span>
-                    Rating: <strong className="text-slate-800">{shop.rating || 4.8} / 5.0</strong> (Verified Calicut Shoppers)
+                    Rating: <strong className="text-[#1B1C19]">{shop.rating || 4.8} / 5.0</strong> (Verified Calicut Shoppers)
                   </span>
                 </div>
               </div>
@@ -180,22 +180,34 @@ export const ShopPage = ({ shop, products, onBack }) => {
       </div>
 
       {/* Shop's Products & Exclusive Offers Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+      <div className="relative overflow-hidden mt-10 py-8">
+        <img
+          src="/images/bg-shop-catalog.jpg"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className="pointer-events-none absolute inset-0 w-full h-full object-cover object-center opacity-20"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#FFFDF7] via-[#FFFDF7]/85 to-[#FFFDF7]"
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-xl font-black text-slate-900 tracking-tight flex items-center">
+            <h2 className="text-xl font-black text-[#1B1C19] tracking-tight flex items-center">
               <Tag className="w-5 h-5 mr-2" style={{ color: brandColor }} />
               Available Products & Current Offers ({shopProducts.length})
             </h2>
-            <p className="text-xs text-slate-500 mt-0.5">
+            <p className="text-xs text-[#5C5647] mt-0.5">
               Active products and promotional deals from this store
             </p>
           </div>
         </div>
 
         {shopProducts.length === 0 ? (
-          <div className="bg-white rounded-2xl p-12 text-center border border-slate-200">
-            <p className="text-slate-500 text-sm">
+          <div className="bg-white rounded-2xl p-12 text-center border border-[#EAE4D3]">
+            <p className="text-[#5C5647] text-sm">
               This shop has not uploaded any products yet.
             </p>
           </div>
@@ -204,7 +216,7 @@ export const ShopPage = ({ shop, products, onBack }) => {
             {shopProducts.map((product) => (
               <div
                 key={product._id || product.id}
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="bg-white rounded-2xl border border-[#EAE4D3] overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div className="relative aspect-square overflow-hidden bg-slate-100">
                   <img
@@ -218,7 +230,7 @@ export const ShopPage = ({ shop, products, onBack }) => {
                     </div>
                   )}
                   {product.offerTag && (
-                    <div className="absolute bottom-3 left-3 bg-slate-900/90 text-orange-300 font-bold text-[11px] px-2 py-0.5 rounded shadow">
+                    <div className="absolute bottom-3 left-3 bg-[#1B1C19]/90 text-[#FACC15] font-bold text-[11px] px-2 py-0.5 rounded shadow">
                       {product.offerTag}
                     </div>
                   )}
@@ -229,11 +241,11 @@ export const ShopPage = ({ shop, products, onBack }) => {
                     <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">
                       {product.category}
                     </span>
-                    <h4 className="font-bold text-slate-900 text-sm mt-0.5">
+                    <h4 className="font-bold text-[#1B1C19] text-sm mt-0.5">
                       {product.title}
                     </h4>
                     {product.description && (
-                      <p className="text-xs text-slate-500 line-clamp-2 mt-1">
+                      <p className="text-xs text-[#5C5647] line-clamp-2 mt-1">
                         {product.description}
                       </p>
                     )}
@@ -242,7 +254,7 @@ export const ShopPage = ({ shop, products, onBack }) => {
                   <div className="pt-4 mt-2 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-2.5">
                     <div className="self-start sm:self-auto">
                       <div className="flex items-baseline space-x-2">
-                        <span className="text-base font-black text-slate-900">
+                        <span className="text-base font-black text-[#1B1C19]">
                           ₹{product.price.toLocaleString()}
                         </span>
                         {product.originalPrice > product.price && (
@@ -256,7 +268,7 @@ export const ShopPage = ({ shop, products, onBack }) => {
                     <div className="flex items-center space-x-2 w-full sm:w-auto">
                       <button
                         onClick={() => addToCart(product, shop)}
-                        className="flex-1 sm:flex-none bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold px-3 py-2 rounded-xl flex items-center justify-center space-x-1 shadow-2xs transition-all cursor-pointer"
+                        className="flex-1 sm:flex-none bg-[#FACC15] hover:bg-[#FDE047] text-[#1B1C19] text-xs font-bold px-3 py-2 rounded-xl flex items-center justify-center space-x-1 shadow-2xs transition-all cursor-pointer"
                       >
                         <ShoppingBag className="w-3.5 h-3.5" />
                         <span>Add to Cart</span>
@@ -279,6 +291,7 @@ export const ShopPage = ({ shop, products, onBack }) => {
             ))}
           </div>
         )}
+        </div>
       </div>
     </div>
   );

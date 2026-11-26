@@ -74,13 +74,23 @@ export const CategoriesPage = ({
   const getProductsCount = (catId) => products.filter((p) => p.category === catId).length;
 
   return (
-    <div className="min-h-screen pb-20 bg-slate-50">
+    <div className="min-h-screen pb-20 bg-[#FFFDF7]">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-orange-950 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800 shadow-md">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="relative overflow-hidden bg-gradient-to-r from-[#1B1C19] via-[#262520] to-[#3B3318] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#2E2F2A] shadow-md">
+        <img
+          src="/images/bg-categories-showcase.jpg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 w-full h-full object-cover object-center opacity-25"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1B1C19]/90 via-[#1B1C19]/78 to-[#1B1C19]/65"
+        />
+        <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-300 text-xs font-semibold mb-3">
-              <Layers className="w-3.5 h-3.5 text-orange-400" />
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FACC15]/15 border border-[#FACC15]/40 text-[#FACC15] text-xs font-semibold mb-3">
+              <Layers className="w-3.5 h-3.5 text-[#FACC15]" />
               <span>Explore by Category • Kozhikode</span>
             </div>
             <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
@@ -92,7 +102,7 @@ export const CategoriesPage = ({
           </div>
 
           <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/15 text-xs space-y-1 shrink-0">
-            <span className="font-bold text-orange-300">5 Popular Retail Categories</span>
+            <span className="font-bold text-[#FACC15]">5 Popular Retail Categories</span>
             <p className="text-slate-300">Direct comparison across 50+ local shops</p>
           </div>
         </div>
@@ -113,11 +123,11 @@ export const CategoriesPage = ({
             return (
               <div
                 key={cat.id}
-                className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-3xl border border-[#EAE4D3] overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Category Image Header */}
-                  <div className="h-44 w-full relative overflow-hidden bg-slate-900">
+                  <div className="h-44 w-full relative overflow-hidden bg-[#1B1C19]">
                     <img
                       src={meta.heroImg}
                       alt={cat.label}
@@ -126,7 +136,7 @@ export const CategoriesPage = ({
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent" />
 
                     {/* Icon Badge */}
-                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-orange-600/90 backdrop-blur-xs text-white flex items-center justify-center shadow-lg">
+                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-[#FACC15]/95 backdrop-blur-xs text-white flex items-center justify-center shadow-lg">
                       <Icon className="w-5 h-5" />
                     </div>
 
@@ -134,7 +144,7 @@ export const CategoriesPage = ({
                       <h3 className="font-extrabold text-xl tracking-tight text-white">
                         {cat.label}
                       </h3>
-                      <p className="text-[11px] text-orange-300 font-medium mt-0.5">
+                      <p className="text-[11px] text-[#FACC15] font-medium mt-0.5">
                         {meta.highlight}
                       </p>
                     </div>
@@ -146,7 +156,7 @@ export const CategoriesPage = ({
                       {meta.description}
                     </p>
 
-                    <div className="flex items-center justify-between text-xs font-semibold py-2 px-3 rounded-xl bg-slate-50 border border-slate-100 text-slate-700">
+                    <div className="flex items-center justify-between text-xs font-semibold py-2 px-3 rounded-xl bg-[#FFFDF7] border border-slate-100 text-slate-700">
                       <span>🏬 {shopCount} Verified Shops</span>
                       <span>🏷️ {prodCount} Active Offers</span>
                     </div>
@@ -165,7 +175,7 @@ export const CategoriesPage = ({
                             <span className="truncate text-slate-700 font-medium max-w-[180px]">
                               {p.title}
                             </span>
-                            <span className="font-extrabold text-slate-900 shrink-0">
+                            <span className="font-extrabold text-[#1B1C19] shrink-0">
                               ₹{p.price}
                               {p.discountPercentage > 0 && (
                                 <span className="text-[10px] text-red-600 font-bold ml-1">
@@ -184,7 +194,7 @@ export const CategoriesPage = ({
                 <div className="p-5 pt-0">
                   <button
                     onClick={() => onSelectCategoryAndGo(cat.id)}
-                    className="w-full bg-slate-900 hover:bg-orange-600 text-white font-bold text-xs py-3 px-4 rounded-xl transition-all flex items-center justify-center space-x-2 group-hover:shadow-md cursor-pointer"
+                    className="w-full bg-[#1B1C19] hover:bg-[#FACC15] text-[#1B1C19] font-bold text-xs py-3 px-4 rounded-xl transition-all flex items-center justify-center space-x-2 group-hover:shadow-md cursor-pointer"
                   >
                     <span>Browse {cat.label}</span>
                     <ArrowRight className="w-4 h-4" />

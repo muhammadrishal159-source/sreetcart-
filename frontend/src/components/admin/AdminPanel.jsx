@@ -52,8 +52,18 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Header */}
-      <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div>
+      <div className="relative overflow-hidden bg-[#1B1C19] text-white rounded-3xl p-6 sm:p-8 shadow-xl mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <img
+          src="/images/bg-seller-workspace.jpg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 w-full h-full object-cover object-right opacity-20"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1B1C19]/95 via-[#1B1C19]/80 to-[#1B1C19]/70"
+        />
+        <div className="relative z-10">
           <div className="flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2">
             <ShieldCheck className="w-4 h-4" />
             <span>StreetCart Platform Governance</span>
@@ -66,7 +76,7 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
           </p>
         </div>
 
-        <div className="flex items-center space-x-3 self-start md:self-auto">
+        <div className="relative z-10 flex items-center space-x-3 self-start md:self-auto">
           <span className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-white/10 text-stone-200 border border-white/10">
             Admin Mode Active
           </span>
@@ -75,52 +85,52 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-2xs">
-          <div className="flex items-center justify-between text-stone-500 mb-2">
+        <div className="bg-white p-5 rounded-2xl border border-[#EAE4D3] shadow-2xs">
+          <div className="flex items-center justify-between text-[#5C5647] mb-2">
             <span className="text-xs font-bold uppercase">Total Stores</span>
-            <Store className="w-4 h-4 text-orange-600" />
+            <Store className="w-4 h-4 text-[#CA8A04]" />
           </div>
-          <p className="text-2xl font-black text-slate-900">{shops.length}</p>
+          <p className="text-2xl font-black text-[#1B1C19]">{shops.length}</p>
           <span className="text-[11px] text-emerald-600 font-semibold">100% Verified in Kozhikode</span>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-2xs">
-          <div className="flex items-center justify-between text-stone-500 mb-2">
+        <div className="bg-white p-5 rounded-2xl border border-[#EAE4D3] shadow-2xs">
+          <div className="flex items-center justify-between text-[#5C5647] mb-2">
             <span className="text-xs font-bold uppercase">Active Featured Ads</span>
             <Sparkles className="w-4 h-4 text-amber-500" />
           </div>
           <p className="text-2xl font-black text-amber-600">{featuredCount}</p>
-          <span className="text-[11px] text-stone-500">Promoted on Homepage Carousel</span>
+          <span className="text-[11px] text-[#5C5647]">Promoted on Homepage Carousel</span>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-2xs">
-          <div className="flex items-center justify-between text-stone-500 mb-2">
+        <div className="bg-white p-5 rounded-2xl border border-[#EAE4D3] shadow-2xs">
+          <div className="flex items-center justify-between text-[#5C5647] mb-2">
             <span className="text-xs font-bold uppercase">Target City</span>
             <ShieldCheck className="w-4 h-4 text-blue-600" />
           </div>
-          <p className="text-2xl font-black text-slate-900">Kozhikode</p>
-          <span className="text-[11px] text-stone-500">SM Street, Mavoor Rd, Palayam</span>
+          <p className="text-2xl font-black text-[#1B1C19]">Kozhikode</p>
+          <span className="text-[11px] text-[#5C5647]">SM Street, Mavoor Rd, Palayam</span>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-2xs">
-          <div className="flex items-center justify-between text-stone-500 mb-2">
+        <div className="bg-white p-5 rounded-2xl border border-[#EAE4D3] shadow-2xs">
+          <div className="flex items-center justify-between text-[#5C5647] mb-2">
             <span className="text-xs font-bold uppercase">Commission Rate</span>
             <BarChart3 className="w-4 h-4 text-emerald-600" />
           </div>
           <p className="text-2xl font-black text-emerald-600">0%</p>
-          <span className="text-[11px] text-stone-500">Free Promotion in Phase 1</span>
+          <span className="text-[11px] text-[#5C5647]">Free Promotion in Phase 1</span>
         </div>
       </div>
 
       {/* Merchant Management Table */}
-      <div className="bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden">
+      <div className="bg-white rounded-3xl border border-[#EAE4D3] shadow-sm overflow-hidden">
         {/* Table Filters */}
         <div className="p-5 border-b border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <h3 className="font-extrabold text-slate-900 text-base">
+            <h3 className="font-extrabold text-[#1B1C19] text-base">
               Registered Merchant Storefronts
             </h3>
-            <p className="text-xs text-stone-500">
+            <p className="text-xs text-[#5C5647]">
               Toggle homepage paid ads (`isFeatured`) and manage store status.
             </p>
           </div>
@@ -133,7 +143,7 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search store name or area..."
-                className="w-full pl-8 pr-3 py-1.5 text-xs bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:border-orange-500"
+                className="w-full pl-8 pr-3 py-1.5 text-xs bg-stone-50 border border-[#EAE4D3] rounded-xl focus:outline-none focus:border-[#EAB308]"
               />
             </div>
           </div>
@@ -142,7 +152,7 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
         {/* Table Content */}
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-[#FAF9F6] border-b border-stone-100 text-stone-400 font-bold uppercase tracking-wider text-[10px]">
+            <thead className="bg-[#FFFDF7] border-b border-stone-100 text-stone-400 font-bold uppercase tracking-wider text-[10px]">
               <tr>
                 <th className="py-3 px-5">Store &amp; Location</th>
                 <th className="py-3 px-5">Category</th>
@@ -161,13 +171,13 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
                       <img
                         src={shop.logoUrl}
                         alt={shop.name}
-                        className="w-10 h-10 rounded-xl object-cover bg-stone-100 border border-stone-200 shrink-0"
+                        className="w-10 h-10 rounded-xl object-cover bg-stone-100 border border-[#EAE4D3] shrink-0"
                       />
                       <div>
-                        <h4 className="font-extrabold text-slate-900 text-xs">
+                        <h4 className="font-extrabold text-[#1B1C19] text-xs">
                           {shop.name}
                         </h4>
-                        <span className="text-[11px] text-stone-500 flex items-center">
+                        <span className="text-[11px] text-[#5C5647] flex items-center">
                           {shop.area}
                         </span>
                       </div>
@@ -182,7 +192,7 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
                   </td>
 
                   {/* Rating */}
-                  <td className="py-4 px-5 font-bold text-slate-800">
+                  <td className="py-4 px-5 font-bold text-[#1B1C19]">
                     ⭐ {shop.rating || 4.8}
                   </td>
 
@@ -193,7 +203,7 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
                       className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full font-bold text-[11px] transition-all cursor-pointer ${
                         shop.isFeatured
                           ? 'bg-amber-100 text-amber-800 border border-amber-300 shadow-2xs'
-                          : 'bg-stone-100 text-stone-500 hover:bg-stone-200'
+                          : 'bg-stone-100 text-[#5C5647] hover:bg-stone-200'
                       }`}
                     >
                       <Sparkles className="w-3.5 h-3.5" />
@@ -219,7 +229,7 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
                   <td className="py-4 px-5 text-right">
                     <button
                       onClick={() => onOpenShop(shop._id || shop.id || shop.slug)}
-                      className="p-2 rounded-lg bg-stone-100 hover:bg-slate-900 hover:text-white text-stone-600 transition-colors inline-flex items-center cursor-pointer"
+                      className="p-2 rounded-lg bg-stone-100 hover:bg-[#1B1C19] hover:text-white text-stone-600 transition-colors inline-flex items-center cursor-pointer"
                       title="View Live Store Page"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />

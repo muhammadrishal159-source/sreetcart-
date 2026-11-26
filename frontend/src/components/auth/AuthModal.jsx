@@ -69,8 +69,19 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border border-slate-200 overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1B1C19]/70 backdrop-blur-xs animate-in fade-in duration-200">
+      <div className="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border border-[#EAE4D3] overflow-hidden">
+        <img
+          src="/images/bg-auth-editorial.jpg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute top-0 inset-x-0 h-44 w-full object-cover opacity-35"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute top-0 inset-x-0 h-48 bg-gradient-to-b from-white/40 via-white/85 to-white"
+        />
+        <div className="relative z-10">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -81,10 +92,10 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
 
         {/* Brand Micro Header */}
         <div className="text-center mb-6">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-orange-600 text-white font-bold mb-3 shadow-md shadow-orange-500/20">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#FACC15] text-[#1B1C19] font-bold mb-3 shadow-md shadow-orange-500/20">
             {role === 'shop_owner' ? <Store className="w-6 h-6" /> : <User className="w-6 h-6" />}
           </div>
-          <h2 className="text-2xl font-black text-slate-900 tracking-tight">
+          <h2 className="text-2xl font-black text-[#1B1C19] tracking-tight">
             {isRegister
               ? role === 'shop_owner'
                 ? 'Register Your Shop'
@@ -93,7 +104,7 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
               ? 'Shop Owner Sign In'
               : 'Customer Sign In'}
           </h2>
-          <p className="text-xs text-slate-500 mt-1">
+          <p className="text-xs text-[#5C5647] mt-1">
             {role === 'shop_owner'
               ? 'Manage your Kozhikode store profile & list live offers'
               : 'Discover city offers and compare deals across Kozhikode'}
@@ -107,8 +118,8 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
             onClick={() => setRole('customer')}
             className={`py-2 rounded-lg flex items-center justify-center space-x-1.5 transition-all ${
               role === 'customer'
-                ? 'bg-white text-slate-900 shadow-xs'
-                : 'text-slate-500 hover:text-slate-900'
+                ? 'bg-white text-[#1B1C19] shadow-xs'
+                : 'text-[#5C5647] hover:text-[#1B1C19]'
             }`}
           >
             <User className="w-3.5 h-3.5" />
@@ -120,8 +131,8 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
             onClick={() => setRole('shop_owner')}
             className={`py-2 rounded-lg flex items-center justify-center space-x-1.5 transition-all ${
               role === 'shop_owner'
-                ? 'bg-slate-900 text-white shadow-xs'
-                : 'text-slate-500 hover:text-slate-900'
+                ? 'bg-[#1B1C19] text-white shadow-xs'
+                : 'text-[#5C5647] hover:text-[#1B1C19]'
             }`}
           >
             <Store className="w-3.5 h-3.5" />
@@ -148,7 +159,7 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Rahim / Arjun"
-                className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                className="w-full px-3.5 py-2.5 text-sm bg-[#FFFDF7] border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#EAB308]/30"
               />
             </div>
           )}
@@ -164,7 +175,7 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
                 value={shopName}
                 onChange={(e) => setShopName(e.target.value)}
                 placeholder="e.g. SM Street Heritage Silks"
-                className="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                className="w-full px-3.5 py-2.5 text-sm bg-[#FFFDF7] border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#EAB308]/30"
               />
             </div>
           )}
@@ -181,7 +192,7 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@streetcart.in"
-                className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-[#FFFDF7] border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#EAB308]/30"
               />
             </div>
           </div>
@@ -198,7 +209,7 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-[#FFFDF7] border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#EAB308]/30"
               />
             </div>
           </div>
@@ -215,7 +226,7 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+91 98470 12345"
-                  className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                  className="w-full pl-10 pr-3.5 py-2.5 text-sm bg-[#FFFDF7] border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#EAB308]/30"
                 />
               </div>
             </div>
@@ -226,8 +237,8 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
             disabled={loading}
             className={`w-full py-3 rounded-xl font-bold text-sm text-white shadow-lg transition-all flex items-center justify-center space-x-2 ${
               role === 'shop_owner'
-                ? 'bg-slate-900 hover:bg-slate-800'
-                : 'bg-orange-600 hover:bg-orange-500 shadow-orange-600/20'
+                ? 'bg-[#1B1C19] hover:bg-slate-800'
+                : 'bg-orange-600 hover:bg-[#FDE047] shadow-orange-600/20'
             }`}
           >
             <span>
@@ -249,7 +260,7 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
               setIsRegister(!isRegister);
               setError('');
             }}
-            className="text-xs text-slate-600 hover:text-orange-600 font-semibold"
+            className="text-xs text-slate-600 hover:text-[#CA8A04] font-semibold"
           >
             {isRegister
               ? 'Already registered? Sign In'
@@ -267,18 +278,19 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
             <button
               type="button"
               onClick={() => handleDemoLogin('customer')}
-              className="px-3 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 font-semibold border border-orange-200 transition-colors"
+              className="px-3 py-2 rounded-lg bg-[#FEF9C3]/60 hover:bg-orange-100 text-orange-700 font-semibold border border-orange-200 transition-colors"
             >
               Demo Customer
             </button>
             <button
               type="button"
               onClick={() => handleDemoLogin('shop_owner')}
-              className="px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold border border-slate-200 transition-colors"
+              className="px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-[#1B1C19] font-semibold border border-[#EAE4D3] transition-colors"
             >
               Demo Shop Owner
             </button>
           </div>
+        </div>
         </div>
       </div>
     </div>

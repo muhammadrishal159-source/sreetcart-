@@ -1,17 +1,19 @@
 // Centralized Theme Tokens & Constants for StreetCart
-// Refined Luxury Marketplace Aesthetics
+// Stitch Master Design System: Premium Yellow, White & Warm Cream
 
 export const THEME = {
   brand: {
-    primary: '#E04F2E',       // Refined Terracotta/Coral Red
-    primaryHover: '#C93F1F',
-    secondary: '#0F172A',     // Deep Slate Obsidian
-    accent: '#D97706',        // Amber Gold for Sponsored & Offers
-    canvas: '#FAF9F6',        // Warm Editorial Off-White Canvas
+    primary: '#EAB308',       // Luminous Golden Yellow
+    primaryBright: '#FACC15', // Vibrant Sun Yellow
+    primaryHover: '#CA8A04',
+    secondary: '#1B1C19',     // Deep Charcoal Ink
+    accent: '#FEF08A',        // Soft Warm Yellow Highlight
+    canvas: '#FFFDF7',        // Warm Editorial Off-White Canvas
+    surfaceMuted: '#F6F3EA',  // Soft Cream Container
     cardBg: '#FFFFFF',
-    border: '#E8E5DF',        // Subtle warm border
-    textMain: '#000000',
-    textMuted: '#64748B',
+    border: '#EAE4D3',        // Subtle warm hairline border
+    textMain: '#1B1C19',
+    textMuted: '#5C5647',
   },
   city: {
     name: 'Kozhikode',
@@ -86,7 +88,7 @@ export const THEME = {
       id: 'Sports',
       label: 'Sports & Fitness',
       icon: 'Trophy',
-      img: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=100&auto=format&fit=crop&q=80',
+      img: 'https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=200&auto=format&fit=crop&q=80',
     },
     {
       id: 'Electronics',

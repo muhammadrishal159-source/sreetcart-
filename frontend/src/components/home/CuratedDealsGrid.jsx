@@ -1,11 +1,11 @@
 import React from 'react';
-import { Tag, Sparkles, ArrowRight, ShieldCheck, ShoppingBag } from 'lucide-react';
+import { Sparkles, ArrowRight, ShoppingBag } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 
-export const CuratedDealsGrid = ({ products = [], shops = [], onOpenShop }) => {
+export const CuratedDealsGrid = ({ shops = [], onOpenShop, onOpenProduct }) => {
   const { addToCart } = useCart();
 
-  // Curated spotlight deals matching Flipkart bottom row structure
+  // Curated spotlight deals
   const curatedDeals = [
     {
       id: 'deal_shoes',
@@ -52,86 +52,98 @@ export const CuratedDealsGrid = ({ products = [], shops = [], onOpenShop }) => {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <section className="relative overflow-hidden py-8">
+      <img
+        src="/images/bg-deals-editorial.jpg"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        className="pointer-events-none absolute inset-0 w-full h-full object-cover object-center opacity-25"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#FFFDF7] via-[#FFFDF7]/80 to-[#FFFDF7]"
+      />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Editorial Section Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-6">
         <div>
-          <div className="flex items-center space-x-2">
-            <span className="p-1 rounded-md bg-orange-100 text-orange-600">
+          <div className="flex items-center space-x-2.5">
+            <span className="p-1.5 rounded-xl bg-[#FEF9C3] border border-[#FDE047]/60 text-[#854D0E]">
               <Sparkles className="w-4 h-4" />
             </span>
-            <h2 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#1B1C19] tracking-tight">
               Top Verified City Deals
             </h2>
-            <span className="text-[10px] bg-red-100 text-red-700 font-extrabold px-1.5 py-0.5 rounded">
+            <span className="text-[10px] bg-[#FACC15] text-[#1B1C19] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
               HOT
             </span>
           </div>
-          <p className="text-xs text-stone-500 mt-0.5">
-            Handpicked bestsellers from Kozhikode's most popular shopping hubs
+          <p className="text-xs sm:text-sm text-[#5C5647] mt-1">
+            Handpicked bestsellers from Kozhikode&apos;s most popular shopping hubs
           </p>
         </div>
       </div>
 
-      {/* Grid of 3 Prominent Product Deal Cards (Flipkart Style) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {/* Grid of 3 Prominent Product Deal Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {curatedDeals.map((deal) => (
           <div
             key={deal.id}
-            className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden shadow-2xs hover:shadow-xl hover:border-orange-300 transition-all duration-300 flex flex-col justify-between group"
+            className="bg-white rounded-3xl border border-[#EAE4D3] overflow-hidden shadow-[0_4px_20px_-6px_rgba(27,28,25,0.06)] hover:shadow-[0_18px_40px_-10px_rgba(234,179,8,0.22)] hover:border-[#FACC15] transition-all duration-300 flex flex-col justify-between group"
           >
             {/* Top Media Container */}
             <div
-              onClick={() => onOpenShop(deal.shopId)}
-              className="relative aspect-[4/3] bg-stone-100 overflow-hidden cursor-pointer"
+              onClick={() =>
+                onOpenProduct ? onOpenProduct(deal.id) : onOpenShop(deal.shopId)
+              }
+              className="relative aspect-[4/3] bg-[#F5F3EE] overflow-hidden cursor-pointer"
             >
               <img
                 src={deal.imageUrl}
                 alt={deal.title}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
 
-              {/* AD Badge on Top Right (Like Flipkart image) */}
-              <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-xs text-white/90 text-[10px] font-bold px-2 py-0.5 rounded-md">
+              <div className="absolute top-3 right-3 bg-[#1B1C19]/75 backdrop-blur-xs text-[#FFFDF7] text-[10px] font-bold px-2.5 py-0.5 rounded-full">
                 AD
               </div>
 
-              {/* Brand Logo Tag (Like Campus/Pond's pill in reference) */}
-              <div className="absolute bottom-11 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-xl shadow-md border border-stone-100 flex items-center space-x-1.5">
-                <div className="w-3.5 h-3.5 rounded-full overflow-hidden bg-orange-600">
+              <div className="absolute bottom-11 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full shadow-md border border-[#EAE4D3] flex items-center space-x-1.5">
+                <div className="w-3.5 h-3.5 rounded-full overflow-hidden bg-[#FACC15]">
                   <img src={deal.brandLogo} alt="" className="w-full h-full object-cover" />
                 </div>
-                <span className="text-[10px] font-black tracking-wider text-slate-900">
+                <span className="text-[10px] font-extrabold tracking-wider text-[#1B1C19]">
                   {deal.brandBadge}
                 </span>
               </div>
 
-              {/* Dark Gradient Discount Ribbon across Bottom of Image */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-6 pb-2 px-3 flex items-center justify-between text-white">
-                <span className="font-black text-sm text-amber-300">
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#1B1C19]/90 via-[#1B1C19]/55 to-transparent pt-7 pb-2.5 px-4 flex items-center justify-between text-white">
+                <span className="font-extrabold text-sm text-[#FACC15]">
                   {deal.discountBanner}
                 </span>
-                <span className="text-[11px] text-stone-300">
+                <span className="text-[11px] text-[#E5E0D3]">
                   {deal.locality}
                 </span>
               </div>
             </div>
 
             {/* Bottom Content Info */}
-            <div className="p-4 space-y-2 flex-1 flex flex-col justify-between">
+            <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
               <div>
-                <p className="text-xs font-bold text-slate-900 line-clamp-1 group-hover:text-orange-600 transition-colors">
+                <p className="text-sm font-bold text-[#1B1C19] line-clamp-1 group-hover:text-[#A16207] transition-colors">
                   {deal.title}
                 </p>
-                <p className="text-[11px] text-stone-500 line-clamp-1 font-medium mt-0.5">
+                <p className="text-xs text-[#5C5647] line-clamp-1 font-medium mt-0.5">
                   {deal.subtitle}
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-stone-100 flex items-center justify-between">
+              <div className="pt-3 border-t border-[#F5F3EE] flex items-center justify-between">
                 <div>
-                  <span className="text-base font-black text-slate-900">₹{deal.price}</span>
-                  <span className="text-xs text-stone-400 line-through ml-1.5">
+                  <span className="text-lg font-extrabold text-[#1B1C19]">₹{deal.price}</span>
+                  <span className="text-xs text-[#817660] line-through ml-1.5">
                     ₹{deal.originalPrice}
                   </span>
                 </div>
@@ -156,7 +168,7 @@ export const CuratedDealsGrid = ({ products = [], shops = [], onOpenShop }) => {
                         1,
                       );
                     }}
-                    className="p-2 rounded-xl bg-orange-50 hover:bg-orange-600 text-orange-600 hover:text-white transition-all cursor-pointer shadow-2xs"
+                    className="p-2.5 rounded-full bg-[#FEF9C3] hover:bg-[#FACC15] text-[#1B1C19] transition-all cursor-pointer shadow-2xs"
                     title="Add to Cart"
                   >
                     <ShoppingBag className="w-4 h-4" />
@@ -164,16 +176,17 @@ export const CuratedDealsGrid = ({ products = [], shops = [], onOpenShop }) => {
 
                   <button
                     onClick={() => onOpenShop(deal.shopId)}
-                    className="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all cursor-pointer flex items-center space-x-1"
+                    className="px-4 py-2 rounded-full bg-[#1B1C19] hover:bg-[#2E2F2A] text-white text-xs font-bold transition-all cursor-pointer flex items-center space-x-1.5"
                   >
                     <span>Store</span>
-                    <ArrowRight className="w-3 h-3 text-orange-400" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#FACC15]" />
                   </button>
                 </div>
               </div>
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
