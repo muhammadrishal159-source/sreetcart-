@@ -46,7 +46,7 @@ export const CartProvider = ({ children }) => {
         ...prev,
         {
           product,
-          shop: shop || { name: 'Kozhikode Partner Store', area: 'Kozhikode' },
+          shop: shop || { name: 'Nadapuram Partner Store', area: 'Nadapuram' },
           quantity: qty,
         },
       ];

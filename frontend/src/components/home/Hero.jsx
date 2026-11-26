@@ -27,7 +27,7 @@ export const Hero = ({ onExploreShops, onOpenAuth, onNavigate }) => {
           {/* Tagline Badge */}
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/80 text-orange-700 text-xs font-bold tracking-tight shadow-2xs">
             <Sparkles className="w-3.5 h-3.5 text-orange-600" />
-            <span>Kozhikode City Marketplace</span>
+            <span>Nadapuram City Marketplace</span>
             <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
             <span className="font-semibold text-stone-600">SM Street • Mavoor Rd • Focus Mall</span>
           </div>
@@ -41,7 +41,7 @@ export const Hero = ({ onExploreShops, onOpenAuth, onNavigate }) => {
           </h1>
 
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-xl">
-            Browse verified local boutiques, footwear, sports kits, and electronics across Kozhikode in one refined application instead of checking dozens of separate social media accounts.
+            Browse verified local boutiques, footwear, sports kits, and electronics across Nadapuram in one refined application instead of checking dozens of separate social media accounts.
           </p>
 
           {/* Smart Contextual Actions based on Auth State */}
@@ -168,7 +168,7 @@ export const Hero = ({ onExploreShops, onOpenAuth, onNavigate }) => {
           <div className="pt-2 text-[11px] text-stone-600 flex items-center justify-between bg-white p-2.5 rounded-xl border border-stone-200/70">
             <span className="flex items-center">
               <MapPin className="w-3.5 h-3.5 text-orange-600 mr-1" />
-              SM Street, Kozhikode
+              SM Street, Nadapuram
             </span>
             <span className="text-emerald-700 font-bold">● In Stock</span>
           </div>

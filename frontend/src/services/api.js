@@ -78,7 +78,7 @@ class ApiService {
       const mockCustomer = {
         user: {
           id: 'user_arjun',
-          name: 'Arjun Kozhikode',
+          name: 'Arjun Nadapuram',
           email: credentials.email,
           role: 'customer',
           phone: '+91 98470 11111',

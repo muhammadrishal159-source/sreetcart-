@@ -52,7 +52,7 @@ export const ShopPage = ({ shop, products, onBack }) => {
   };
 
   return (
-    <div className="min-h-screen pb-20">
+    <div className="min-h-screen pb-20 bg-[#FFFDF7]">
       {/* Top back bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <button
@@ -60,7 +60,7 @@ export const ShopPage = ({ shop, products, onBack }) => {
           className="inline-flex items-center space-x-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#1B1C19] transition-colors bg-white px-3 py-1.5 rounded-lg border border-[#EAE4D3] shadow-2xs"
         >
           <ArrowLeft className="w-4 h-4 text-[#CA8A04]" />
-          <span>Back to Kozhikode Stores</span>
+          <span>Back to Nadapuram Stores</span>
         </button>
       </div>
 
@@ -68,20 +68,20 @@ export const ShopPage = ({ shop, products, onBack }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl border border-[#EAE4D3] overflow-hidden shadow-sm">
           {/* Cover Banner */}
-          <div className="h-48 sm:h-64 lg:h-72 w-full relative overflow-hidden bg-slate-800">
+          <div className="h-48 sm:h-64 lg:h-72 w-full relative overflow-hidden bg-[#FEF9E7]">
             <img
               src={shop.bannerUrl}
               alt={shop.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white/75 via-white/10 to-transparent" />
 
             <div className="absolute top-4 right-4 flex items-center space-x-2">
               <button
                 onClick={handleShare}
-                className="bg-black/50 hover:bg-black/70 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center space-x-1.5 transition-colors"
+                className="bg-white/90 hover:bg-white backdrop-blur-md text-[#1B1C19] border border-[#EAE4D3] shadow-sm text-xs font-semibold px-3 py-1.5 rounded-lg flex items-center space-x-1.5 transition-colors cursor-pointer"
               >
-                <Share2 className="w-3.5 h-3.5" />
+                <Share2 className="w-3.5 h-3.5 text-[#D97706]" />
                 <span>{copied ? 'Copied!' : 'Share Shop'}</span>
               </button>
             </div>
@@ -127,7 +127,7 @@ export const ShopPage = ({ shop, products, onBack }) => {
               <div className="flex items-center space-x-3 pt-2 md:pt-0">
                 {shop.whatsapp && (
                   <a
-                    href={`https://wa.me/${shop.whatsapp.replace(/[^0-9]/g, '')}?text=Hi%20${encodeURIComponent(shop.name)},%20I%20found%20your%20store%20on%20StreetCart%20Kozhikode!`}
+                    href={`https://wa.me/${shop.whatsapp.replace(/[^0-9]/g, '')}?text=Hi%20${encodeURIComponent(shop.name)},%20I%20found%20your%20store%20on%20StreetCart%20Nadapuram!`}
                     target="_blank"
                     rel="noreferrer"
                     className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl flex items-center space-x-2 shadow-sm transition-all"

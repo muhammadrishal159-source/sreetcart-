@@ -106,8 +106,8 @@ export const AuthModal = ({ isOpen, onClose, initialRole = 'customer' }) => {
           </h2>
           <p className="text-xs text-[#5C5647] mt-1">
             {role === 'shop_owner'
-              ? 'Manage your Kozhikode store profile & list live offers'
-              : 'Discover city offers and compare deals across Kozhikode'}
+              ? 'Manage your Nadapuram store profile & list live offers'
+              : 'Discover city offers and compare deals across Nadapuram'}
           </p>
         </div>
 

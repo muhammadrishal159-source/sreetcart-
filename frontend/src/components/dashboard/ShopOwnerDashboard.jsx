@@ -23,7 +23,7 @@ import {
 import { api } from '../../services/api';
 import { THEME } from '../../theme/theme';
 
-// Quick Preset Photography for Kozhikode Merchants
+// Quick Preset Photography for Nadapuram Merchants
 const PRESET_IMAGES = [
   {
     label: 'Malabar Cotton Kurti',
@@ -299,7 +299,7 @@ export const ShopOwnerDashboard = ({ user, allShops = [], onOpenShop, onRefreshS
     );
     if (updated) {
       setCurrentShop(updated);
-      setShopMsg('Store Profile & Kozhikode address updated successfully!');
+      setShopMsg('Store Profile & Nadapuram address updated successfully!');
       setTimeout(() => setShopMsg(''), 3000);
       if (onRefreshShops) onRefreshShops();
     }
@@ -342,11 +342,11 @@ export const ShopOwnerDashboard = ({ user, allShops = [], onOpenShop, onRefreshS
 
             <div>
               <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-                {currentShop?.name || 'Kozhikode Merchant Dashboard'}
+                {currentShop?.name || 'Nadapuram Merchant Dashboard'}
               </h1>
               <p className="text-xs sm:text-sm text-stone-300 mt-1">
                 Merchant: <strong className="text-white">{user?.name}</strong> ({user?.email}) •{' '}
-                <span className="text-[#FACC15] font-semibold">{currentShop?.area || 'Kozhikode City'}</span>
+                <span className="text-[#FACC15] font-semibold">{currentShop?.area || 'Nadapuram City'}</span>
               </p>
             </div>
           </div>
@@ -812,7 +812,7 @@ export const ShopOwnerDashboard = ({ user, allShops = [], onOpenShop, onRefreshS
                     <div className="p-2 rounded-xl bg-white border border-[#EAE4D3]/70 text-[10px] text-stone-600 flex items-center justify-between">
                       <span className="flex items-center">
                         <MapPin className="w-3 h-3 text-[#CA8A04] mr-1" />
-                        {currentShop?.area || 'Kozhikode'}
+                        {currentShop?.area || 'Nadapuram'}
                       </span>
                       <span className="text-emerald-700 font-bold">
                         {newProduct.stockStatus === 'in_stock'
@@ -967,7 +967,7 @@ export const ShopOwnerDashboard = ({ user, allShops = [], onOpenShop, onRefreshS
               Edit Store Profile &amp; Calicut Location
             </h2>
             <p className="text-xs text-[#5C5647] mt-1">
-              Customize your storefront name, branding theme color, phone, WhatsApp, and address in Kozhikode.
+              Customize your storefront name, branding theme color, phone, WhatsApp, and address in Nadapuram.
             </p>
           </div>
 
@@ -1020,7 +1020,7 @@ export const ShopOwnerDashboard = ({ user, allShops = [], onOpenShop, onRefreshS
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-xs font-bold text-[#1B1C19] mb-1.5">
-                  Kozhikode Area / Street *
+                  Nadapuram Area / Street *
                 </label>
                 <input
                   type="text"
@@ -1061,7 +1061,7 @@ export const ShopOwnerDashboard = ({ user, allShops = [], onOpenShop, onRefreshS
 
             <div>
               <label className="block text-xs font-bold text-[#1B1C19] mb-1.5">
-                Full Physical Address in Kozhikode *
+                Full Physical Address in Nadapuram *
               </label>
               <textarea
                 rows={2}
@@ -1070,7 +1070,7 @@ export const ShopOwnerDashboard = ({ user, allShops = [], onOpenShop, onRefreshS
                 onChange={(e) =>
                   setProfileForm({ ...profileForm, address: e.target.value })
                 }
-                placeholder="Near Sweet Street Clock Tower, SM Street, Kozhikode, Kerala 673001"
+                placeholder="Near Sweet Street Clock Tower, SM Street, Nadapuram, Kerala 673001"
                 className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#FFFDF7] border border-[#EAE4D3] rounded-xl text-[#1B1C19] focus:outline-none focus:ring-2 focus:ring-[#EAB308]/30"
               />
             </div>

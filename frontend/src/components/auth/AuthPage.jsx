@@ -104,7 +104,7 @@ export const AuthPage = ({ onContinueAsGuest, onLoginSuccess }) => {
                 Street<span className="text-orange-500">Cart</span>
               </span>
               <span className="text-[10px] bg-orange-600/20 text-orange-400 border border-orange-500/30 px-2 py-0.5 rounded-full font-bold">
-                Kozhikode
+                Nadapuram
               </span>
             </div>
             <p className="text-[11px] text-slate-400">
@@ -395,7 +395,7 @@ export const AuthPage = ({ onContinueAsGuest, onLoginSuccess }) => {
       <footer className="max-w-4xl mx-auto w-full pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
         <div className="flex items-center space-x-2">
           <MapPin className="w-3.5 h-3.5 text-orange-500" />
-          <span>Kozhikode: SM Street • Mavoor Road • Palayam • Focus Mall</span>
+          <span>Nadapuram: SM Street • Mavoor Road • Palayam • Focus Mall</span>
         </div>
         <p>© {new Date().getFullYear()} StreetCart</p>
       </footer>

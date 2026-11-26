@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, ShoppingBag } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 
@@ -80,17 +81,22 @@ export const CuratedDealsGrid = ({ shops = [], onOpenShop, onOpenProduct }) => {
             </span>
           </div>
           <p className="text-xs sm:text-sm text-[#5C5647] mt-1">
-            Handpicked bestsellers from Kozhikode&apos;s most popular shopping hubs
+            Handpicked bestsellers from Nadapuram&apos;s most popular shopping hubs
           </p>
         </div>
       </div>
 
       {/* Grid of 3 Prominent Product Deal Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {curatedDeals.map((deal) => (
-          <div
+        {curatedDeals.map((deal, idx) => (
+          <motion.div
             key={deal.id}
-            className="bg-white rounded-3xl border border-[#EAE4D3] overflow-hidden shadow-[0_4px_20px_-6px_rgba(27,28,25,0.06)] hover:shadow-[0_18px_40px_-10px_rgba(234,179,8,0.22)] hover:border-[#FACC15] transition-all duration-300 flex flex-col justify-between group"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.55, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4 }}
+            className="bg-white rounded-3xl border border-[#EAE4D3] overflow-hidden shadow-[0_4px_20px_-6px_rgba(27,28,25,0.06)] hover:shadow-[0_18px_40px_-10px_rgba(234,179,8,0.22)] hover:border-[#FACC15] transition-colors duration-300 flex flex-col justify-between group"
           >
             {/* Top Media Container */}
             <div
@@ -184,7 +190,7 @@ export const CuratedDealsGrid = ({ shops = [], onOpenShop, onOpenProduct }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       </div>

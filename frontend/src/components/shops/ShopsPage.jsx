@@ -41,41 +41,45 @@ export const ShopsPage = ({ shops, products, onOpenShop, onOpenAuth }) => {
   return (
     <div className="min-h-screen pb-20 bg-[#FFFDF7]">
       {/* Header Banner */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-[#1B1C19] via-[#262520] to-[#3B3318] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-[#2E2F2A] shadow-md">
+      <div className="relative overflow-hidden bg-[#FFFDF7] text-[#1B1C19] py-12 px-4 sm:px-6 lg:px-8 border-b border-[#EAE4D3] shadow-xs">
         <img
           src="/images/bg-shops-header.jpg"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 w-full h-full object-cover object-center opacity-30"
+          className="pointer-events-none absolute inset-0 w-full h-full object-cover object-center opacity-85"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1B1C19]/90 via-[#1B1C19]/75 to-[#1B1C19]/65"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#FFFDF7]/95 via-[#FFFDF7]/80 to-[#FFFDF7]/30"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#FFFDF7]/75 via-transparent to-[#FFFDF7]/30"
         />
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FACC15]/15 border border-[#FACC15]/40 text-[#FACC15] text-xs font-semibold mb-3">
-              <Store className="w-3.5 h-3.5 text-[#FACC15]" />
-              <span>City Store Directory • Kozhikode</span>
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FEF9E7]/90 backdrop-blur-md border border-[#FACC15]/60 text-[#92400E] text-xs font-semibold mb-3 shadow-2xs">
+              <Store className="w-3.5 h-3.5 text-[#D97706]" />
+              <span>City Store Directory • Nadapuram</span>
             </div>
-            <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
-              Registered Kozhikode Stores
+            <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-[#1B1C19]">
+              Registered Nadapuram Stores
             </h1>
-            <p className="text-xs sm:text-sm text-slate-300 mt-2 max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#4B4A42] mt-2 max-w-2xl leading-relaxed">
               Explore verified local shops registered on StreetCart across SM Street, Mavoor Road, Palayam, Focus Mall and other shopping hubs in Calicut.
             </p>
           </div>
 
           {/* Quick Hub summary */}
-          <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/15 text-xs space-y-1.5 shrink-0">
-            <span className="font-bold text-[#FACC15] flex items-center">
-              <ShieldCheck className="w-4 h-4 mr-1 text-emerald-400" />
+          <div className="bg-white/88 backdrop-blur-md p-4 rounded-2xl border border-[#EAE4D3] shadow-sm text-xs space-y-1.5 shrink-0">
+            <span className="font-bold text-[#92400E] flex items-center">
+              <ShieldCheck className="w-4 h-4 mr-1 text-emerald-600" />
               Verified Local Stores
             </span>
-            <p className="text-slate-300">
-              <strong className="text-white">{shops.length} Stores</strong> actively listed in Kozhikode
+            <p className="text-[#4B4A42]">
+              <strong className="text-[#1B1C19]">{shops.length} Stores</strong> actively listed in Nadapuram
             </p>
-            <p className="text-[11px] text-slate-400">
+            <p className="text-[11px] text-[#6B6759]">
               Direct WhatsApp order support with store owners
             </p>
           </div>
@@ -123,7 +127,7 @@ export const ShopsPage = ({ shops, products, onOpenShop, onOpenAuth }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         <div className="flex items-center justify-between mb-4">
           <p className="text-xs font-semibold text-[#5C5647]">
-            Showing <strong className="text-[#1B1C19]">{filteredShops.length}</strong> shops in Kozhikode
+            Showing <strong className="text-[#1B1C19]">{filteredShops.length}</strong> shops in Nadapuram
           </p>
         </div>
 
@@ -254,7 +258,7 @@ export const ShopsPage = ({ shops, products, onOpenShop, onOpenAuth }) => {
         <div className="mt-14 bg-gradient-to-r from-orange-600 to-amber-600 rounded-3xl p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="space-y-2 text-center sm:text-left">
             <h3 className="text-xl sm:text-2xl font-black">
-              Own a retail shop in Kozhikode?
+              Own a retail shop in Nadapuram?
             </h3>
             <p className="text-xs sm:text-sm text-orange-100 max-w-xl">
               List your retail store and promotional offers on StreetCart today for free and reach thousands of shoppers across Calicut!

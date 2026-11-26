@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   @font-face {
     font-family: 'inter_regular';
     src: local('Inter Regular'), local('Inter-Regular');
@@ -58,6 +62,62 @@
     font-family: 'Plus Jakarta Sans', 'Inter', inter_regular, Arial, sans-serif;
     color: #1B1C19;
     letter-spacing: -0.02em;
+  }
+}
+
+@keyframes scBgFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scLogoReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scLetterReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sc-intro-bg {
+  animation: scBgFadeIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.sc-intro-logo {
+  opacity: 0;
+  animation: scLogoReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards;
+}
+
+.sc-intro-letter {
+  display: inline-block;
+  opacity: 0;
+  animation: scLetterReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-intro-bg,
+  .sc-intro-logo,
+  .sc-intro-letter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

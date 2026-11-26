@@ -91,7 +91,7 @@ export const CategoriesPage = ({
           <div>
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FACC15]/15 border border-[#FACC15]/40 text-[#FACC15] text-xs font-semibold mb-3">
               <Layers className="w-3.5 h-3.5 text-[#FACC15]" />
-              <span>Explore by Category • Kozhikode</span>
+              <span>Explore by Category • Nadapuram</span>
             </div>
             <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
               City Marketplace Categories

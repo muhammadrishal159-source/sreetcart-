@@ -18,7 +18,7 @@ export const Footer = ({ onOpenAuth, onSelectCategory }) => {
             </div>
             <p className="text-xs text-[#A8A29E] leading-relaxed">
               Discover City Stores &amp; Best Offers in One Place. Connect directly with
-              local shops across Kozhikode without scrolling through hundreds of separate Instagram and WhatsApp feeds.
+              local shops across Nadapuram without scrolling through hundreds of separate Instagram and WhatsApp feeds.
             </p>
             <p className="text-xs text-[#FACC15] font-semibold">
               &ldquo;Discover City Stores &amp; Best Offers in One Place&rdquo;
@@ -28,7 +28,7 @@ export const Footer = ({ onOpenAuth, onSelectCategory }) => {
           {/* Quick Hubs in Calicut */}
           <div>
             <h4 className="text-xs font-bold text-white uppercase tracking-[0.14em] mb-4">
-              Kozhikode Shopping Hubs
+              Nadapuram Shopping Hubs
             </h4>
             <ul className="space-y-2.5 text-xs text-[#A8A29E]">
               {(THEME.city?.popularHubs || []).map((hub) => (
@@ -67,7 +67,7 @@ export const Footer = ({ onOpenAuth, onSelectCategory }) => {
               For Local Merchants
             </h4>
             <p className="text-xs text-[#A8A29E] leading-relaxed">
-              Own a retail shop in Kozhikode? List your store profile and publish daily offers directly to city shoppers.
+              Own a retail shop in Nadapuram? List your store profile and publish daily offers directly to city shoppers.
             </p>
             <button
               onClick={() => onOpenAuth('shop_owner')}
@@ -84,7 +84,7 @@ export const Footer = ({ onOpenAuth, onSelectCategory }) => {
         </div>
 
         <div className="mt-12 pt-6 border-t border-[#2E2F2A] flex flex-col sm:flex-row items-center justify-between text-xs text-[#817660]">
-          <p>© {new Date().getFullYear()} StreetCart Kozhikode. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} StreetCart Nadapuram. All rights reserved.</p>
           <p className="mt-2 sm:mt-0">Phase 1 Working Foundation • Clean Modular Architecture</p>
         </div>
       </div>

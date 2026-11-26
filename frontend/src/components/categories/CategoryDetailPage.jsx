@@ -17,7 +17,8 @@ import { useCart } from '../../context/CartContext';
 const CATEGORY_PAGE_CONFIG = {
   'for-you': {
     catId: 'All',
-    eyebrow: 'Curated For You • Kozhikode',
+    video: '/videos/for-you-hero.mp4',
+    eyebrow: 'Curated For You • Nadapuram',
     title: 'For You — Top City Picks & Open Storefronts',
     subtitle:
       'Handpicked bestsellers, verified neighborhood storefronts, and trending daily offers curated across Calicut.',
@@ -26,15 +27,17 @@ const CATEGORY_PAGE_CONFIG = {
   },
   fashion: {
     catId: 'Dress',
+    video: '/videos/fashion-hero.mp4',
     eyebrow: 'Apparel & Ethnic Wear',
     title: 'Fashion — Malabar Silks, Kurtis & Menswear',
     subtitle:
-      'Discover handloom cotton kurtis, Kasavu traditional sarees, festive bridal wear, and casual linen outfits from Kozhikode’s iconic textile streets.',
+      'Discover handloom cotton kurtis, Kasavu traditional sarees, festive bridal wear, and casual linen outfits from Nadapuram’s iconic textile streets.',
     highlights: ['Handloom & Cotton Kurtis', 'Bridal & Festive Silks', 'SM Street Boutiques'],
     hubs: 'SM Street (Mittayi Theruvu) • Palayam',
   },
   'footwear-bags': {
     catId: 'Bags & Shoes',
+    video: '/videos/footwear-bags-hero.mp4',
     eyebrow: 'Footwear & Leather Goods',
     title: 'Footwear & Bags — Sneakers, Formals & Totes',
     subtitle:
@@ -44,6 +47,7 @@ const CATEGORY_PAGE_CONFIG = {
   },
   'watches-jewelry': {
     catId: 'Accessories',
+    video: '/videos/watches-jewelry-hero.mp4',
     eyebrow: 'Timepieces & Lifestyle',
     title: 'Watches & Jewelry — Minimalist & Classic Accents',
     subtitle:
@@ -53,6 +57,7 @@ const CATEGORY_PAGE_CONFIG = {
   },
   'sports-fitness': {
     catId: 'Sports',
+    video: '/videos/sports-fitness-hero.mp4',
     eyebrow: 'Athletics & Outdoor',
     title: 'Sports & Fitness — Turf Studs, Kits & Gear',
     subtitle:
@@ -62,6 +67,7 @@ const CATEGORY_PAGE_CONFIG = {
   },
   electronics: {
     catId: 'Electronics',
+    video: '/videos/electronics-hero.mp4',
     eyebrow: 'Audio & Smart Tech',
     title: 'Electronics — Wireless Audio, Power & Tech',
     subtitle:
@@ -113,25 +119,40 @@ export function CategoryDetailPage({
 
   const getShop = (shopId) =>
     shops.find((s) => s._id === shopId || s.id === shopId || s.slug === shopId) || {
-      name: 'Local Kozhikode Store',
-      area: 'Kozhikode',
+      name: 'Local Nadapuram Store',
+      area: 'Nadapuram',
       whatsapp: '+919847012345',
     };
 
   return (
     <div className="min-h-screen bg-[#FFFDF7] pb-20">
-      {/* Category Hero Header using exact existing category image */}
+      {/* Category Hero Header using section-matched background video */}
       <div className="relative overflow-hidden bg-[#1B1C19] text-white border-b border-[#2E2F2A]">
-        {catTheme?.img && (
-          <img
-            src={catTheme.img}
-            alt={catTheme.label}
-            className="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-30"
+        {config.video ? (
+          <video
+            key={config.video}
+            src={config.video}
+            poster={catTheme?.img}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-50"
           />
+        ) : (
+          catTheme?.img && (
+            <img
+              src={catTheme.img}
+              alt={catTheme.label}
+              className="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-30"
+            />
+          )
         )}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1B1C19]/95 via-[#1B1C19]/82 to-[#1B1C19]/60"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1B1C19]/90 via-[#1B1C19]/70 to-[#1B1C19]/40"
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">

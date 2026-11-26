@@ -72,7 +72,7 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
             Marketplace Admin Control Center
           </h1>
           <p className="text-xs sm:text-sm text-stone-300 mt-1">
-            Manage registered Kozhikode merchants, approve stores, and toggle paid featured ads.
+            Manage registered Nadapuram merchants, approve stores, and toggle paid featured ads.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
             <Store className="w-4 h-4 text-[#CA8A04]" />
           </div>
           <p className="text-2xl font-black text-[#1B1C19]">{shops.length}</p>
-          <span className="text-[11px] text-emerald-600 font-semibold">100% Verified in Kozhikode</span>
+          <span className="text-[11px] text-emerald-600 font-semibold">100% Verified in Nadapuram</span>
         </div>
 
         <div className="bg-white p-5 rounded-2xl border border-[#EAE4D3] shadow-2xs">
@@ -108,7 +108,7 @@ export const AdminPanel = ({ shops, onUpdateShop, onOpenShop }) => {
             <span className="text-xs font-bold uppercase">Target City</span>
             <ShieldCheck className="w-4 h-4 text-blue-600" />
           </div>
-          <p className="text-2xl font-black text-[#1B1C19]">Kozhikode</p>
+          <p className="text-2xl font-black text-[#1B1C19]">Nadapuram</p>
           <span className="text-[11px] text-[#5C5647]">SM Street, Mavoor Rd, Palayam</span>
         </div>
 

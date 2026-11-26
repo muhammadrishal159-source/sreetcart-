@@ -74,12 +74,12 @@ export const DiscoveryBar = ({
           </div>
         </div>
 
-        {/* Bottom: Kozhikode Localities / Shopping Hubs */}
+        {/* Bottom: Nadapuram Localities / Shopping Hubs */}
         <div className="pt-3 border-t border-stone-100">
           <div className="flex items-center justify-between mb-2.5">
             <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center">
               <MapPin className="w-3.5 h-3.5 text-orange-600 mr-1.5" />
-              Kozhikode Shopping Hub / Area
+              Nadapuram Shopping Hub / Area
             </h3>
             {selectedArea && selectedArea !== 'all' && (
               <button

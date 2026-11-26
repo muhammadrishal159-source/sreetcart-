@@ -65,7 +65,7 @@ export const CartDrawer = ({ onOpenCartPage }) => {
     orderText += `\n*Subtotal:* ₹${subtotal}\n`;
     orderText += `*Delivery Fee:* ₹${deliveryFee}\n`;
     orderText += `*Total Amount:* ₹${total}\n\n`;
-    orderText += `Placed via StreetCart Kozhikode Marketplace`;
+    orderText += `Placed via StreetCart Nadapuram Marketplace`;
 
     setOrderSuccess(true);
 
@@ -111,7 +111,7 @@ export const CartDrawer = ({ onOpenCartPage }) => {
                   Your StreetCart
                 </h2>
                 <p className="text-xs text-[#5C5647]">
-                  {itemCount} {itemCount === 1 ? 'item' : 'items'} from Kozhikode stores
+                  {itemCount} {itemCount === 1 ? 'item' : 'items'} from Nadapuram stores
                 </p>
               </div>
             </div>
@@ -248,7 +248,7 @@ export const CartDrawer = ({ onOpenCartPage }) => {
                       Select Delivery Mode
                     </span>
                     <span className="text-[11px] text-emerald-600 font-semibold">
-                      Kozhikode City
+                      Nadapuram City
                     </span>
                   </div>
 
@@ -349,7 +349,7 @@ export const CartDrawer = ({ onOpenCartPage }) => {
                         required
                         value={customerAddress}
                         onChange={(e) => setCustomerAddress(e.target.value)}
-                        placeholder="Street Address in Kozhikode (e.g. Near Focus Mall) *"
+                        placeholder="Street Address in Nadapuram (e.g. Near Focus Mall) *"
                         className="w-full px-3 py-2 text-xs bg-stone-50 border border-[#EAE4D3] rounded-xl focus:outline-none focus:border-[#EAB308]"
                       />
                     </div>

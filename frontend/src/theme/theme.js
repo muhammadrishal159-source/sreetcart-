@@ -16,7 +16,7 @@ export const THEME = {
     textMuted: '#5C5647',
   },
   city: {
-    name: 'Kozhikode',
+    name: 'Nadapuram',
     popularHubs: [
       'SM Street (Sweet Street)',
       'Mavoor Road',
@@ -25,7 +25,7 @@ export const THEME = {
       'HiLITE Mall Hub',
     ],
     districts: [
-      { id: 'all', name: 'All Kozhikode' },
+      { id: 'all', name: 'All Nadapuram' },
       { id: 'sm-street', name: 'SM Street (Sweet Street)' },
       { id: 'mavoor-rd', name: 'Mavoor Road' },
       { id: 'palayam', name: 'Palayam' },
@@ -37,7 +37,7 @@ export const THEME = {
     {
       id: 'pickup',
       title: 'Store Pickup',
-      subtitle: 'Self pickup from store in Kozhikode',
+      subtitle: 'Self pickup from store in Nadapuram',
       price: 0,
       eta: 'Ready in 2 hours',
       tag: 'FREE',

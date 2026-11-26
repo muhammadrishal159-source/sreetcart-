@@ -7,6 +7,7 @@ import {
   useLocation,
   useParams,
 } from 'react-router-dom';
+import { MotionConfig, motion } from 'framer-motion';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import { Navbar } from './components/layout/Navbar';
@@ -27,6 +28,7 @@ import { AdminPanel } from './components/admin/AdminPanel';
 import { CartDrawer } from './components/cart/CartDrawer';
 import { CartPage } from './components/cart/CartPage';
 import { AuthModal } from './components/auth/AuthModal';
+import { BrandIntroScreen } from './components/landing/BrandIntroScreen';
 import { api } from './services/api';
 
 const CATEGORY_TO_SLUG = {
@@ -134,14 +136,14 @@ function MainApp() {
 
   const navigateToView = (view) => {
     const routeMap = {
-      home: '/',
+      home: '/home',
       shops: '/shops',
       categories: '/categories',
       dashboard: '/dashboard',
       admin: '/admin',
       cart: '/cart',
     };
-    navigate(routeMap[view] || '/');
+    navigate(routeMap[view] || '/home');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -167,7 +169,7 @@ function MainApp() {
 
   const handleLogout = () => {
     logout();
-    navigate('/');
+    navigate('/home');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -199,16 +201,109 @@ function MainApp() {
     return shopArea.includes(areaId) || areaId.includes(shopArea);
   });
 
+  const [hasEnteredSite, setHasEnteredSite] = useState(false);
+  const [introOpening, setIntroOpening] = useState(false);
+
+  const isHomeOrRoot =
+    location.pathname === '/' || location.pathname === '/home';
+
+  // If browser reloads on any subpage (not '/' or '/home'), go directly to Home Page
+  useEffect(() => {
+    if (!hasEnteredSite && !isHomeOrRoot) {
+      setHasEnteredSite(true);
+      navigate('/home', { replace: true });
+    }
+  }, [hasEnteredSite, isHomeOrRoot, navigate]);
+
+  const showIntroOverlay = !hasEnteredSite && isHomeOrRoot;
+
+  const homePageContent = (
+    <motion.div
+      initial={showIntroOverlay ? { opacity: 0.15, scale: 0.94 } : { opacity: 0, y: 10 }}
+      animate={
+        showIntroOverlay && !introOpening
+          ? { opacity: 0.15, scale: 0.94 }
+          : { opacity: 1, scale: 1, y: 0 }
+      }
+      transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <CategoryIconStrip
+        selectedCategory={selectedCategory}
+        onSelectCategory={setSelectedCategory}
+        onOpenCategoryPage={handleOpenCategorySlug}
+      />
+
+      <PremiumHomeHero
+        shopCount={shops.length}
+        onExploreCollection={() => {
+          const el = document.getElementById('collection-showcase');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }}
+        onBrowseShops={() => navigateToView('shops')}
+      />
+
+      <div id="collection-showcase" className="scroll-mt-20">
+        <FlipkartBannerCarousel
+          shops={shops}
+          products={products}
+          onOpenShop={handleOpenShop}
+        />
+
+        <CuratedDealsGrid
+          products={filteredProducts}
+          shops={shops}
+          onOpenShop={handleOpenShop}
+          onOpenProduct={handleOpenProduct}
+        />
+
+        <OfferComparisonView
+          products={filteredProducts}
+          shops={shops}
+          onOpenShop={handleOpenShop}
+          onOpenProduct={handleOpenProduct}
+          selectedCategory={selectedCategory}
+        />
+      </div>
+
+      <ShopDirectory
+        shops={filteredShops}
+        onOpenShop={handleOpenShop}
+        onSelectCategory={setSelectedCategory}
+      />
+    </motion.div>
+  );
+
   return (
     <div className="min-h-screen flex flex-col bg-[#FFFDF7] text-[#1B1C19]">
+      {showIntroOverlay && (
+        <BrandIntroScreen
+          onOpeningStart={() => setIntroOpening(true)}
+          onEnter={() => {
+            setHasEnteredSite(true);
+            navigate('/home', { replace: true });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onSelectCategorySlug={(slug) => {
+            setHasEnteredSite(true);
+            navigate(`/category/${encodeURIComponent(slug)}`, { replace: true });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onOpenCartPage={() => {
+            setHasEnteredSite(true);
+            navigate('/shops', { replace: true });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        />
+      )}
+
       <Navbar
         onNavigate={navigateToView}
         currentView={getCurrentView()}
         searchQuery={searchQuery}
         onSearchChange={(val) => {
           setSearchQuery(val);
-          if (location.pathname !== '/' && val.trim()) {
-            navigate('/');
+          if (location.pathname !== '/home' && val.trim()) {
+            navigate('/home');
           }
         }}
         onOpenAuth={handleOpenAuth}
@@ -219,56 +314,8 @@ function MainApp() {
 
       <main className="flex-1">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <CategoryIconStrip
-                  selectedCategory={selectedCategory}
-                  onSelectCategory={setSelectedCategory}
-                  onOpenCategoryPage={handleOpenCategorySlug}
-                />
-
-                <PremiumHomeHero
-                  shopCount={shops.length}
-                  onExploreCollection={() => {
-                    const el = document.getElementById('collection-showcase');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  onBrowseShops={() => navigateToView('shops')}
-                />
-
-                <div id="collection-showcase" className="scroll-mt-20">
-                  <FlipkartBannerCarousel
-                    shops={shops}
-                    products={products}
-                    onOpenShop={handleOpenShop}
-                  />
-
-                  <CuratedDealsGrid
-                    products={filteredProducts}
-                    shops={shops}
-                    onOpenShop={handleOpenShop}
-                    onOpenProduct={handleOpenProduct}
-                  />
-
-                  <OfferComparisonView
-                    products={filteredProducts}
-                    shops={shops}
-                    onOpenShop={handleOpenShop}
-                    onOpenProduct={handleOpenProduct}
-                    selectedCategory={selectedCategory}
-                  />
-                </div>
-
-                <ShopDirectory
-                  shops={filteredShops}
-                  onOpenShop={handleOpenShop}
-                  onSelectCategory={setSelectedCategory}
-                />
-              </>
-            }
-          />
+          <Route path="/" element={homePageContent} />
+          <Route path="/home" element={homePageContent} />
 
           <Route
             path="/shops"
@@ -411,12 +458,14 @@ function MainApp() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <CartProvider>
-          <MainApp />
-        </CartProvider>
-      </AuthProvider>
-    </BrowserRouter>
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
+        <AuthProvider>
+          <CartProvider>
+            <MainApp />
+          </CartProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </MotionConfig>
   );
 }

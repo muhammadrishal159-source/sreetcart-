@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Store, MapPin, Star, ArrowRight, Sparkles } from 'lucide-react';
 
 export const ShopDirectory = ({ shops, onOpenShop }) => {
@@ -33,11 +34,16 @@ export const ShopDirectory = ({ shops, onOpenShop }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {(shops || []).map((shop) => (
-          <div
+        {(shops || []).map((shop, idx) => (
+          <motion.div
             key={shop._id || shop.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.55, delay: (idx % 3) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4 }}
             onClick={() => onOpenShop(shop._id || shop.id || shop.slug)}
-            className="bg-white rounded-3xl border border-[#EAE4D3] overflow-hidden shadow-[0_2px_14px_rgba(27,28,25,0.04)] hover:shadow-[0_18px_38px_-10px_rgba(234,179,8,0.22)] hover:border-[#FACC15] transition-all duration-300 cursor-pointer group flex flex-col justify-between"
+            className="bg-white rounded-3xl border border-[#EAE4D3] overflow-hidden shadow-[0_2px_14px_rgba(27,28,25,0.04)] hover:shadow-[0_18px_38px_-10px_rgba(234,179,8,0.22)] hover:border-[#FACC15] transition-colors duration-300 cursor-pointer group flex flex-col justify-between"
           >
             <div>
               {/* Banner */}
@@ -103,7 +109,7 @@ export const ShopDirectory = ({ shops, onOpenShop }) => {
               <span>View Shop &amp; Catalog</span>
               <ArrowRight className="w-4 h-4 text-[#CA8A04] group-hover:translate-x-1 transition-transform" />
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       </div>

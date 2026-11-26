@@ -28,8 +28,8 @@ export const OfferComparisonView = ({
   const getShop = (shopId) => {
     return (
       (shops || []).find((s) => s._id === shopId || s.id === shopId) || {
-        name: 'Local Kozhikode Store',
-        area: 'Kozhikode',
+        name: 'Local Nadapuram Store',
+        area: 'Nadapuram',
         brandColor: '#EAB308',
         whatsapp: '+919847012345',
       }

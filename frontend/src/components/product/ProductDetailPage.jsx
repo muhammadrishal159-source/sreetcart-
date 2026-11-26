@@ -93,8 +93,8 @@ export function ProductDetailPage({
         s.id === product.shopId ||
         s.slug === product.shopId,
     ) || {
-      name: 'Local Kozhikode Store',
-      area: 'Kozhikode',
+      name: 'Local Nadapuram Store',
+      area: 'Nadapuram',
       whatsapp: '+919847012345',
     };
 
@@ -208,7 +208,7 @@ export function ProductDetailPage({
                   <p className="text-xs font-bold text-[#1B1C19]">{shop.name}</p>
                   <p className="text-[11px] text-[#5C5647] flex items-center gap-1">
                     <MapPin className="w-3 h-3 text-[#CA8A04]" />
-                    <span>{shop.area || shop.address || 'Kozhikode'}</span>
+                    <span>{shop.area || shop.address || 'Nadapuram'}</span>
                   </p>
                 </div>
               </div>
@@ -265,7 +265,7 @@ export function ProductDetailPage({
 
               <div className="flex items-center space-x-2 text-xs text-[#5C5647] pt-2">
                 <ShieldCheck className="w-4 h-4 text-[#CA8A04]" />
-                <span>Verified Kozhikode store pricing • Store Pickup &amp; City Delivery</span>
+                <span>Verified Nadapuram store pricing • Store Pickup &amp; City Delivery</span>
               </div>
             </div>
           </div>

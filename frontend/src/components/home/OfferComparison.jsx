@@ -13,8 +13,8 @@ export const OfferComparison = ({
   const getShop = (shopId) => {
     return (
       shops.find((s) => s._id === shopId || s.id === shopId) || {
-        name: 'Local Kozhikode Store',
-        area: 'Kozhikode',
+        name: 'Local Nadapuram Store',
+        area: 'Nadapuram',
         brandColor: '#FF5A36',
         whatsapp: '+919847012345',
       }
@@ -76,7 +76,7 @@ export const OfferComparison = ({
       {sortedProducts.length === 0 ? (
         <div className="bg-white rounded-2xl p-12 text-center border border-slate-200">
           <p className="text-slate-500 text-sm">
-            No products found matching this filter in Kozhikode stores.
+            No products found matching this filter in Nadapuram stores.
           </p>
         </div>
       ) : (

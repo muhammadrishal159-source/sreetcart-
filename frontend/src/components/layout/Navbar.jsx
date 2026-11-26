@@ -45,7 +45,7 @@ export const Navbar = ({
                 Street<span className="text-[#CA8A04]">Cart</span>
               </span>
               <span className="text-[10px] bg-[#FEF9C3] text-[#854D0E] border border-[#FDE047]/70 font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                Calicut
+                Nadapuram
               </span>
             </div>
             <p className="text-[11px] text-[#5C5647] hidden sm:block -mt-0.5 font-medium">
