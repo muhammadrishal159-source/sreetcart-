@@ -1,7 +1,7 @@
 // StreetCart API Client
 // Connects to NestJS backend with automatic fallback to seed data if server is offline
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 // Fallback seed data in case backend is starting up or disconnected
 import { SEED_FALLBACK_SHOPS, SEED_FALLBACK_PRODUCTS } from './seedFallback';
