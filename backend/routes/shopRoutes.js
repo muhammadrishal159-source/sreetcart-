@@ -17,3 +17,4 @@ router.get('/:idOrSlug', getShopDetail);
 router.put('/:id', updateShopById);
 
 module.exports = router;
+

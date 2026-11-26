@@ -179,3 +179,4 @@ const SEED_PRODUCTS = [
 ];
 
 module.exports = { SEED_SHOPS, SEED_PRODUCTS };
+

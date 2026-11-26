@@ -15,3 +15,4 @@ router.post('/', createProduct);
 router.delete('/:id', deleteProduct);
 
 module.exports = router;
+
